@@ -1,0 +1,19 @@
+# OS / editor / agent tooling
+.DS_Store
+.cache/
+.claude/
+.serena/
+.bmad*/
+.vscode/
+
+# Build artifacts (rebuilt with `make package`)
+*.alfredworkflow
+alfred-zellij/workflow/alfred-zellij
+alfred-zellij/workflow/alfred-zellij-*
+
+# Plaintext Ente export: contains TOTP secrets
+ente_auth.txt
+*.ente-export*
+
+# Upstream clone (github.com/chkpwd/alfred-ente-auth) with its own git history
+alfred-ente-2fa/alfred-ente-auth/

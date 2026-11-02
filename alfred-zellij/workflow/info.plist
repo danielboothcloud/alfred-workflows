@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielbooth.alfred-zellij</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>8D090FBC-317D-4427-ACE8-A19F49FB1D1D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>512FA5D6-F948-4A38-A363-785448126981</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>512FA5D6-F948-4A38-A363-785448126981</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>97A92754-4D2A-4AD6-9199-E260F6158066</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Booth</string>
+	<key>description</key>
+	<string>Switch, create, kill, delete and rename Zellij sessions in Ghostty</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Zellij Sessions</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading Zellij sessions…</string>
+				<key>script</key>
+				<string>./alfred-zellij filter "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Switch, create and manage Zellij sessions</string>
+				<key>title</key>
+				<string>Zellij Sessions</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8D090FBC-317D-4427-ACE8-A19F49FB1D1D</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-zellij run</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>512FA5D6-F948-4A38-A363-785448126981</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Zellij</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>97A92754-4D2A-4AD6-9199-E260F6158066</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Zellij Sessions
+
+Type `zj` (configurable) to list sessions. Running sessions come first, then exited ones.
+
+| Key | Running session | Exited session |
+|-----|-----------------|----------------|
+| ↩ | Focus / switch / attach | Resurrect |
+| ⌥↩ | Kill (stays resurrectable) | Delete |
+| ⌃↩ | Rename | – |
+| fn↩ | Open in a new Ghostty window | Open in a new Ghostty window |
+| ⇧ / ⌘Y | Quick Look of the active pane | – |
+
+**Opening a session** focuses the Ghostty terminal already showing it. Otherwise it switches the Zellij client in the frontmost Ghostty terminal. If no terminal can be switched, it opens a new Ghostty window.
+
+**Creating**: type a name that does not exist and press ↩. Add `@` to pick a layout, e.g. `zj api @compact`. Press ⌥↩ to create in the background.
+
+**Deleting a running session** takes two steps: ⌥↩ kills it and the list reopens with it marked as exited; ⌥↩ again deletes it. No actions use ⌘, because Alfred itself uses ⌘.
+
+**Bulk**: type `kill all` or `delete all`.
+
+Requires Ghostty 1.3+ (AppleScript) and Zellij 0.44+.</string>
+	<key>uidata</key>
+	<dict>
+		<key>8D090FBC-317D-4427-ACE8-A19F49FB1D1D</key>
+		<dict>
+			<key>xpos</key>
+			<real>60</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>512FA5D6-F948-4A38-A363-785448126981</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>97A92754-4D2A-4AD6-9199-E260F6158066</key>
+		<dict>
+			<key>xpos</key>
+			<real>540</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>zj</string>
+				<key>placeholder</key>
+				<string>zj</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword that opens the session list</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>window</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New window</string>
+						<string>window</string>
+					</array>
+					<array>
+						<string>New tab in front window</string>
+						<string>tab</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Where to attach when no Ghostty terminal can be switched</string>
+			<key>label</key>
+			<string>Open in</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>open_mode</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>~</string>
+				<key>placeholder</key>
+				<string>~</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Working directory for new sessions</string>
+			<key>label</key>
+			<string>New session directory</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>default_cwd</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>zellij default</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Layout for new sessions when none is picked with @</string>
+			<key>label</key>
+			<string>Default layout</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>default_layout</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>~/.config/zellij/layouts</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Directory scanned for layouts offered after @</string>
+			<key>label</key>
+			<string>Layout directory</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>layout_dir</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>auto-detect</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Path to the zellij binary. Leave empty to search Homebrew, Cargo, mise and Nix locations.</string>
+			<key>label</key>
+			<string>Zellij path</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>zellij_path</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Reopen the list after kill, delete or rename</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Keep managing</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>reopen_after_action</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
