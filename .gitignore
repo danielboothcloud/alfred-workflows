@@ -10,6 +10,8 @@
 *.alfredworkflow
 alfred-zellij/workflow/alfred-zellij
 alfred-zellij/workflow/alfred-zellij-*
+app-launcher/workflow/alfred-apps
+app-launcher/workflow/alfred-apps-*
 
 # Plaintext Ente export: contains TOTP secrets
 ente_auth.txt

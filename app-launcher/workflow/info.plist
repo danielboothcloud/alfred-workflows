@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielbooth.alfred-apps</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>3C1F7B2A-6E0D-4C8B-9A51-2F6D8E4B7A10</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B7E2D5C4-1A93-4F68-8C2E-5D0A9B3F6E21</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Booth</string>
+	<key>description</key>
+	<string>Find and open apps without relying on Spotlight's index</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>App Launcher</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Indexing apps…</string>
+				<key>script</key>
+				<string>./alfred-apps filter "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Search and open applications</string>
+				<key>title</key>
+				<string>Open App</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>3C1F7B2A-6E0D-4C8B-9A51-2F6D8E4B7A10</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>if [ "$action" = reveal ]; then open -R "$1"; else open "$1"; fi</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B7E2D5C4-1A93-4F68-8C2E-5D0A9B3F6E21</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## App Launcher
+
+Type `app` (configurable) followed by a space and part of an app's name. Press ↩ to open it.
+
+| Key | Action |
+| ↩ | Open the app |
+| ⌘↩ | Reveal in Finder |
+| ⌘C | Copy the app's path |
+| → | Alfred file actions |
+
+Apps are found by walking the app folders directly, not through Spotlight, so this works even when Spotlight's index is broken. The searched folders are /Applications, ~/Applications, /System/Applications, the Safari cryptex and /System/Library/CoreServices/Applications. Up to three levels of subfolders are searched, including symlinked folders such as Nix Apps. Finder is also included.
+
+The index is cached and rebuilt automatically whenever one of those folders changes (an app is installed, removed or renamed), and at least once a day.</string>
+	<key>uidata</key>
+	<dict>
+		<key>3C1F7B2A-6E0D-4C8B-9A51-2F6D8E4B7A10</key>
+		<dict>
+			<key>xpos</key>
+			<real>60</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>B7E2D5C4-1A93-4F68-8C2E-5D0A9B3F6E21</key>
+		<dict>
+			<key>xpos</key>
+			<real>300</real>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>app</string>
+				<key>placeholder</key>
+				<string>app</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword that opens the app search</string>
+			<key>label</key>
+			<string>Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>~/Games:/opt/apps</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Extra folders to search, separated by colons</string>
+			<key>label</key>
+			<string>Extra folders</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>extra_dirs</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
