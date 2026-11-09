@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.danielbooth.alfred-mole</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D01</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D02</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D03</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D04</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D05</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D05</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D06</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Daniel Booth</string>
+	<key>description</key>
+	<string>Run Mole: clean your Mac and uninstall apps</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Mole</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:mole_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>./alfred-mole menu "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Open Mole, clean, or uninstall an app</string>
+				<key>title</key>
+				<string>Mole</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D01</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:uninstall_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>1</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Loading apps…</string>
+				<key>script</key>
+				<string>./alfred-mole apps "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Uninstall an app with Mole</string>
+				<key>title</key>
+				<string>Uninstall App</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D02</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-mole run "$action" "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D03</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>notify</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D04</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<true/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./alfred-mole notification "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D05</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>{var:notify_title}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D06</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Mole
+
+Runs [Mole](https://mole.fit) (`brew install mole`). Uninstalling and cleaning run in the background: Mole's confirmation is answered for you and the result arrives as a notification.
+
+**`mole`**: Mole commands
+
+| Item | ↩ | ⌥↩ (dry run, in Ghostty) | ⌘↩ |
+| Open Mole | `mo` in Ghostty | | |
+| Clean | `mo clean` in the background | `mo clean --dry-run` | |
+| Uninstall an app… | search apps (`uninstall`) | | `mo uninstall` (Mole's picker, in Ghostty) |
+| Last run log | open the output of the last background run | | |
+
+**`uninstall`**: lists every app Mole can uninstall, A–Z, with its size. Type to filter.
+
+| Key | Action |
+| ↩ | `mo uninstall &amp;lt;app&amp;gt;` in the background, no confirmation |
+| ⌥↩ | Dry run in Ghostty: preview what would be removed |
+| ⌘↩ | Reveal in Finder |
+| ⌘C | Copy the app's path |
+
+Removed files go to the Trash. If Mole needs admin rights (Homebrew casks, apps owned by root), a password dialog appears; Cancel stops without changing anything. Runs queue up, one at a time.
+
+`mo clean` skips system caches that need admin rights unless *System caches* is enabled in the workflow configuration.
+
+The app list comes from `mo uninstall --list`, which takes about 10 seconds. It is cached and refreshed in the background whenever an app folder changes, and at least every 6 hours.</string>
+	<key>uidata</key>
+	<dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D01</key>
+		<dict>
+			<key>xpos</key>
+			<real>60.0</real>
+			<key>ypos</key>
+			<real>60.0</real>
+		</dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D02</key>
+		<dict>
+			<key>xpos</key>
+			<real>60.0</real>
+			<key>ypos</key>
+			<real>220.0</real>
+		</dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D03</key>
+		<dict>
+			<key>xpos</key>
+			<real>300.0</real>
+			<key>ypos</key>
+			<real>140.0</real>
+		</dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D04</key>
+		<dict>
+			<key>xpos</key>
+			<real>60.0</real>
+			<key>ypos</key>
+			<real>400.0</real>
+		</dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D05</key>
+		<dict>
+			<key>xpos</key>
+			<real>300.0</real>
+			<key>ypos</key>
+			<real>400.0</real>
+		</dict>
+		<key>6D1A3F80-2C4B-4E7A-9B15-7F3E2A9C1D06</key>
+		<dict>
+			<key>xpos</key>
+			<real>540.0</real>
+			<key>ypos</key>
+			<real>400.0</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>mole</string>
+				<key>placeholder</key>
+				<string>mole</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword for the Mole menu</string>
+			<key>label</key>
+			<string>Mole keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mole_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>uninstall</string>
+				<key>placeholder</key>
+				<string>uninstall</string>
+				<key>required</key>
+				<true/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keyword that lists apps to uninstall</string>
+			<key>label</key>
+			<string>Uninstall keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>uninstall_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>window</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>New window</string>
+						<string>window</string>
+					</array>
+					<array>
+						<string>New tab in front window</string>
+						<string>tab</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Where Ghostty runs Mole</string>
+			<key>label</key>
+			<string>Open in</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>open_mode</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Also clean system caches (asks for your admin password)</string>
+			</dict>
+			<key>description</key>
+			<string>mo clean skips caches that need sudo unless this is on</string>
+			<key>label</key>
+			<string>System caches</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>clean_admin</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>placeholder</key>
+				<string>/opt/homebrew/bin/mo</string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Path to the mo binary (found automatically if empty)</string>
+			<key>label</key>
+			<string>Mole path</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>mole_path</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://mole.fit</string>
+</dict>
+</plist>

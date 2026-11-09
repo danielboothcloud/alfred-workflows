@@ -12,6 +12,8 @@ alfred-zellij/workflow/alfred-zellij
 alfred-zellij/workflow/alfred-zellij-*
 app-launcher/workflow/alfred-apps
 app-launcher/workflow/alfred-apps-*
+mole/workflow/alfred-mole
+mole/workflow/alfred-mole-*
 
 # Plaintext Ente export: contains TOTP secrets
 ente_auth.txt
